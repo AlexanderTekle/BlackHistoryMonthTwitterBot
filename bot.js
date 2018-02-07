@@ -62,7 +62,7 @@ var favoriteTweet = function() {
 }
 
 favoriteTweet();
-setInterval(favoriteTweet, 60000);
+setInterval(favoriteTweet, 45000);
 
 function ranDom(arr) {
   var index = Math.floor(Math.random()*arr.length);
