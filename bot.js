@@ -23,6 +23,7 @@ var retweet = function(){
         }
         if (err) {
           console.log("Error 1: Unsuccesful retweet.");
+          console.log("" +err);
         }
       });
     }
@@ -32,4 +33,38 @@ var retweet = function(){
   });
 }
 retweet();
-setInterval(retweet, 60000)
+setInterval(retweet, 300000)
+
+var favoriteTweet = function() {
+  var params = {
+    q: '#blackhistorymonth',
+    result_type: 'recent',
+    lang: 'en'
+  }
+
+  Twitter.get('search/tweets', params, function(err, data){
+
+    var tweet = data.statuses;
+    var randomTweet = ranDom(tweet);
+    // checks if tweet exists
+    if (typeof randomTweet != 'undefined') {
+      //tells twitter to fav tweet
+      Twitter.post('favorites/create', {id: randomTweet.id_str}, function(err, response){
+        if(err){
+          console.log('Error 1: Unsuccessful favorite.');
+        }
+        else {
+          console.log("Successful favorite!");
+        }
+      });
+    }
+  });
+}
+
+favoriteTweet();
+setInterval(favoriteTweet, 300000);
+
+function ranDom(arr) {
+  var index = Math.floor(Math.random()*arr.length);
+  return arr[index];
+};
