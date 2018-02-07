@@ -19,15 +19,17 @@ var retweet = function(){
         id:retweetId
       }, function(err, response){
         if (response) {
-          console.log("Successful retweet!")
+          console.log("Successful retweet!");
         }
         if (err) {
-          console.log("Error: Unsuccesful retweet.")
+          console.log("Error 1: Unsuccesful retweet.");
         }
       });
     }
     else {
-      console.log("Error: Unsuccessful search.")
+      console.log("Error 2: Unsuccessful search.");
     }
   });
 }
+retweet();
+setInterval(retweet, 3600000)
