@@ -33,7 +33,7 @@ var retweet = function(){
   });
 }
 retweet();
-setInterval(retweet, 300000)
+setInterval(retweet, 10000)
 
 var favoriteTweet = function() {
   var params = {
@@ -62,7 +62,7 @@ var favoriteTweet = function() {
 }
 
 favoriteTweet();
-setInterval(favoriteTweet, 300000);
+setInterval(favoriteTweet, 10000);
 
 function ranDom(arr) {
   var index = Math.floor(Math.random()*arr.length);
