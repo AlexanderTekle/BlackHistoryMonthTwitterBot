@@ -13,10 +13,10 @@ var retweet = function(){
   Twitter.get('search/tweets', params, function(err, data){
     if (!err) {
       //grab ID of tweet to rt
-      var retweetID = data.statuses[0].id_str;
+      var retweetId = data.statuses[0].id_str;
       //tell it to rt
       Twitter.post('statuses/retweet/:id', {
-        id:retweetId
+        id: retweetId
       }, function(err, response){
         if (response) {
           console.log("Successful retweet!");
@@ -32,4 +32,4 @@ var retweet = function(){
   });
 }
 retweet();
-setInterval(retweet, 3600000)
+setInterval(retweet, 60000)
