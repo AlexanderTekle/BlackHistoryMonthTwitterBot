@@ -33,7 +33,7 @@ var retweet = function(){
   });
 }
 retweet();
-setInterval(retweet, 3600000)
+setInterval(retweet, 36000000)
 
 var favoriteTweet = function() {
   var params = {
